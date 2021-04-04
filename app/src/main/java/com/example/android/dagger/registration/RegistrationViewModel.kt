@@ -16,6 +16,7 @@
 
 package com.example.android.dagger.registration
 
+import androidx.lifecycle.ViewModel
 import com.example.android.dagger.di.ActivityScope
 import com.example.android.dagger.user.UserManager
 import javax.inject.Inject
@@ -29,7 +30,7 @@ import javax.inject.Inject
 
 // Scopes this ViewModel to components that use @ActivityScope
 @ActivityScope
-class RegistrationViewModel  @Inject constructor(val userManager: UserManager) {
+class RegistrationViewModel  @Inject constructor(val userManager: UserManager) : ViewModel() {
 
     private var username: String? = null
     private var password: String? = null

@@ -18,6 +18,7 @@ package com.example.android.dagger.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.android.dagger.user.UserManager
 import javax.inject.Inject
 
@@ -25,7 +26,7 @@ import javax.inject.Inject
  * LoginViewModel is the ViewModel that [LoginActivity] uses to
  * obtain information of what to show on the screen and handle complex logic.
  */
-class LoginViewModel @Inject constructor(private val userManager: UserManager) {
+class LoginViewModel @Inject constructor(private val userManager: UserManager) : ViewModel() {
 
     private val _loginState = MutableLiveData<LoginViewState>()
     val loginState: LiveData<LoginViewState>
